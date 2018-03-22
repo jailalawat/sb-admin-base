@@ -20,10 +20,10 @@ class ClientUploadsController < ApplicationController
     @photo.title = "Title"
     if @photo.save
         flash[:success] = 'Photo added!'
-        render :json => {success: true, data: @photo.image_data}
+        # render :json => {success: true, data: @photo.image_data}
     else
-        puts YAML::dump(@photo)
-        render :json, {success: false, message: @photo.errors}
+        # puts YAML::dump(@photo)
+        # render :json, {success: false, message: @photo.errors}
     end
     
     #redirect_to "/home/index"
