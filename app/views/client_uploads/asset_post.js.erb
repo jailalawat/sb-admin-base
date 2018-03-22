@@ -4,5 +4,6 @@
   alert("Failed to upload photo: <%= j @photo.errors.full_messages.join(', ').html_safe %>");
 <% else %>
   $("#photo").append("<%= j render(@photo) %>");
+  alert("Photo uploaded successfully");
 <% end %>
 
