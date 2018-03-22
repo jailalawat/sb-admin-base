@@ -1,0 +1,39 @@
+<h1>Images#upload</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <%= render "shared/errors", object: @photo %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="login-panel panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Please upload a image</h3>
+        </div>
+        <div class="panel-body">
+          <form action="/client-uploads/asset" enctype="multipart/form-data" id="new_photo" method="post" role="form">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <fieldset>
+              <% flash.each do |key, value| %>
+                <div class="alert alert-<%= key %>">
+                  <%= value %>
+                </div>
+              <% end %>
+              <div class="form-group">
+                <input class="form-control" name="image" placeholder="Choose a file" type="file"></input>
+              </div>
+              <!-- <input class="btn btn-lg btn-success btn-block" type="submit" value="Upload"></input> -->
+            </fieldset>
+          </form>
+          <script id="template-upload" type="text/x-tmpl">
+            <div class="upload">
+              {%=o.name%}
+              <div class="progress progress-animated" style="width: 0%; background-color: #B4F5B4;"><div class="bar" style="width: 0%"></div></div>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

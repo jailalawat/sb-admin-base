@@ -1,0 +1,13 @@
+== Rails4 + Bootstrap + SB Admin 2.
+
+An empty Rails4 project integrated with 
+
+Boostrap3 framework (http://getbootstrap.com/)
+ 
+and
+
+SB Admin 2 Free Template (http://startbootstrap.com/sb-admin-v2)
+  
+just clone it and run 
+  bundle install
+  rails s

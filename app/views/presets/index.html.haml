@@ -1,0 +1,22 @@
+%h1 Listing presets
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th='Title'
+      %th='Category'
+      %th='Path'  
+
+  %tbody
+    - @presets.each do |preset|
+      %tr
+        %td= preset.title
+        %td= preset.category_id
+        %td= preset.path
+        %td
+          %span= link_to 'Edit', edit_preset_path(preset), :class => 'btn btn-sm btn-warning'
+          %span= link_to 'Destroy', preset, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-sm btn-danger'
+
+%br
+
+= link_to 'New Preset', new_preset_path, :class => 'btn btn-primary'

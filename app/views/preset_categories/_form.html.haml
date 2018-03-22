@@ -1,0 +1,10 @@
+= form_for @preset_category do |f|
+  - if @preset_category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@preset_category.errors.count, "error")} prohibited this preset_category from being saved:"
+      %ul
+        - @preset_category.errors.full_messages.each do |message|
+          %li= message
+
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,2 @@
+module PresetCategoriesHelper
+end

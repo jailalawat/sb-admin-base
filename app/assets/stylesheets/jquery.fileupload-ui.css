@@ -1,0 +1,71 @@
+/*
+ * jQuery File Upload UI Plugin CSS
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+/* line 14, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {
+  margin-bottom: 5px;
+}
+
+/* line 18, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.progress-animated .progress-bar,
+.progress-animated .bar {
+  background-color: #B4F5B4 !important;
+  filter: none;
+}
+
+/* line 22, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.fileupload-process {
+  float: right;
+  display: none;
+}
+
+/* line 27, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.fileupload-processing .fileupload-process,
+.files .processing .preview {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(/assets/loading.gif) center no-repeat;
+  background-size: contain;
+}
+
+/* line 35, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+.files audio,
+.files video {
+  max-width: 300px;
+}
+
+@media (max-width: 767px) {
+  /* line 42, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .fileupload-buttonbar .toggle,
+  .files .toggle,
+  .files .btn span {
+    display: none;
+  }
+
+  /* line 45, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .files .name {
+    width: 80px;
+    word-wrap: break-word;
+  }
+
+  /* line 50, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .files audio,
+  .files video {
+    max-width: 80px;
+  }
+
+  /* line 54, /home/jai/.rvm/gems/ruby-2.1.2@sb-admin-base/gems/jquery-fileupload-rails-0.4.7/app/assets/stylesheets/jquery.fileupload-ui.scss */
+  .files img,
+  .files canvas {
+    max-width: 100%;
+  }
+}

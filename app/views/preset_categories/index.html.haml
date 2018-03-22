@@ -1,0 +1,19 @@
+%h1 Listing preset_categories
+
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+
+  %tbody
+    - @preset_categories.each do |preset_category|
+      %tr
+        %td= link_to 'Show', preset_category
+        %td= link_to 'Edit', edit_preset_category_path(preset_category)
+        %td= link_to 'Destroy', preset_category, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Preset category', new_preset_category_path
