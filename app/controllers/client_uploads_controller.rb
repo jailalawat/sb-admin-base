@@ -1,5 +1,5 @@
 class ClientUploadsController < ApplicationController
-  
+  before_action :authenticate_user!
   include ImagesHelper
   skip_before_filter :verify_authenticity_token  
 

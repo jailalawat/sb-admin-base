@@ -70,3 +70,6 @@ gem "seed_dump"
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'fastimage'
 gem 'jquery-fileupload-rails'
+group :development do
+  gem 'annotate'
+end

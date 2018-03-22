@@ -1,4 +1,5 @@
 class SecurityController < ApplicationController
+    before_action :authenticate_user!
     # skip_before_filter :verify_authenticity_token
     layout :resolve_layout
     #Loggin actions

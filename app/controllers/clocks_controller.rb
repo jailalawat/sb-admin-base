@@ -1,6 +1,7 @@
 class ClocksController < ApplicationController
   before_action :set_clock, only: [:show, :edit, :update, :destroy]
   before_filter :check_administrative_ip, except: [:new, :create]
+  before_action :authenticate_user!
   # GET /clocks
   # GET /clocks.json
   def index

@@ -1,5 +1,5 @@
 %li
-  %a{:href => "/security/profile"}
+  %a{:href => edit_user_registration_path}
     %i.fa.fa-user.fa-fw
     User Profile
 %li
@@ -8,6 +8,6 @@
     Settings
 %li.divider
 %li
-  %a{:href => "/security/logout"}
+  %a{:href => destroy_user_session_path, method: :delete}
     %i.fa.fa-sign-out.fa-fw
     Logout

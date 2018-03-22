@@ -1,4 +1,5 @@
 class PresetCategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_preset_category, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

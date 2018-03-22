@@ -1,4 +1,20 @@
 #encoding: UTF-8
+# == Schema Information
+#
+# Table name: clocks
+#
+#  id         :integer          not null, primary key
+#  date       :date
+#  user       :string(255)
+#  ip         :string(255)
+#  action     :string(255)
+#  message    :text
+#  created_at :datetime
+#  updated_at :datetime
+#  status     :string(255)
+#  time       :datetime
+#
+
 class Clock < ActiveRecord::Base
   validates_presence_of  :action
   validates_presence_of  :date

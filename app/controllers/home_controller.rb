@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
   include SessionHelper
   
   #before_action :logged_in_user #check Authenticated
