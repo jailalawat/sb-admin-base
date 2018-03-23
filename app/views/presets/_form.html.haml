@@ -1,28 +1,27 @@
-= form_for @preset do |f|
-  - if @preset.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@preset.errors.count, "error")} prohibited this preset from being saved:"
-      %ul
-        - @preset.errors.full_messages.each do |message|
-          %li= message
-  .row.well-sm
-    %span.col-xs-6
-      =f.label :category_id
+= form_for @preset, html: { class: "form form-horizontal preset" } do |f|
+  .form-group
+    = f.label :title, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :title, class: 'form-control', required: true
+    = f.error_span(:title)
+  .form-group
+    = f.label :file_upload, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.file_field :path, class: 'form-control', required: true
+    = f.error_span(:path)
+  .form-group
+    = f.label :category_id, class: 'control-label col-lg-2'
+    .col-lg-10
       =f.select :category_id, options_for_select(preset_category_options, @preset.category_id) ,{include_blank: true}, class: "form-control block"
-      
-  .row.well-sm
-    %span.col-xs-6
-      =f.label :title
-      =f.text_field :title, class: "form-control block"
-  
-  .row.well-sm
-    %span.col-xs-6
-      =f.label :file_upload
-      =f.file_field :file_upload, class: "form-control block"
-  .row.well-sm
-    %span.col-xs-6
-      =f.label :status
-      = f.check_box :status
-    
-  .row.well-sm.actions
-    = f.submit 'Save', :class => 'btn btn-success'
+      =# f.text_field :category_id, class: 'form-control', required: true
+    = f.error_span(:category_id)
+  .form-group
+    = f.label :status, class: 'control-label col-lg-2'
+    .col-lg-10
+      =f.select :status, options_for_select(["true", "false"], @preset.status) ,{include_blank: true}, class: "form-control block"
+      =# f.text_field :status, class: 'form-control', required: true
+    = f.error_span(:status)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), presets_path, :class => 'btn btn-default'

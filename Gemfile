@@ -73,4 +73,7 @@ gem 'jquery-fileupload-rails'
 group :development do
   gem 'annotate'
   gem 'sqlite3'
+  gem 'byebug'
 end
+# rails g bootstrap:themed Posts
+gem "twitter-bootstrap-rails", '3.2.2', git: "https://github.com/qx/twitter-bootstrap-rails.git"

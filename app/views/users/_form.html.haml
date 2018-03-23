@@ -1,0 +1,45 @@
+= form_for @user, html: { class: "form form-horizontal user" } do |f|
+  .form-group
+    = f.label :fullName, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :fullName, class: 'form-control', required: true
+    = f.error_span(:fullName)
+  .form-group
+    = f.label :department, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :department, class: 'form-control', required: true
+    = f.error_span(:department)
+  .form-group
+    = f.label :position, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :position, class: 'form-control', required: true
+    = f.error_span(:position)
+  .form-group
+    = f.label :email, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.email_field :email, class: 'form-control', required: true
+    = f.error_span(:email)
+  .form-group
+    = f.label :password, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.password_field :password, class: 'form-control', required: true
+    = f.error_span(:password)
+  .form-group
+    = f.label :password_confirmation, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.password_field :password_confirmation, class: 'form-control', required: true
+    = f.error_span(:password_confirmation)
+  .form-group
+    = f.label :activeKey, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :activeKey, class: 'form-control', required: true
+    = f.error_span(:activeKey)
+  .form-group
+    = f.label :status, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :status, class: 'form-control', required: true
+    = f.error_span(:status)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), users_path, :class => 'btn btn-default'

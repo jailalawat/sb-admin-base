@@ -1,22 +1,27 @@
-%h1 Listing presets
-
+- model_class = Preset
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 %table.table.table-striped
   %thead
     %tr
-      %th='Title'
-      %th='Category'
-      %th='Path'  
-
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:path)
+      %th= model_class.human_attribute_name(:category_id)
+      %th= model_class.human_attribute_name(:status)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @presets.each do |preset|
       %tr
-        %td= preset.title
-        %td= preset.category_id
-        %td= preset.path
+        %td= link_to preset.id, preset_path(preset)
+        %td= link_to preset.title, preset_path(preset)
+        %td= image_tag preset.path[:sm_square].url, size: "50x50" if preset.path_data != ""
+        %td= preset.category.title if preset.category
+        %td= preset.status
+        %td=l preset.created_at
         %td
-          %span= link_to 'Edit', edit_preset_path(preset), :class => 'btn btn-sm btn-warning'
-          %span= link_to 'Destroy', preset, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-sm btn-danger'
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_preset_path(preset), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), preset_path(preset), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Preset', new_preset_path, :class => 'btn btn-primary'
+= link_to t('.new', :default => t("helpers.links.new")), new_preset_path, :class => 'btn btn-primary'

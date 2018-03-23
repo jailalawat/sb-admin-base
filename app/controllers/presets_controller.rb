@@ -24,14 +24,14 @@ class PresetsController < ApplicationController
   def create
     @preset = Preset.new(preset_params)
 
-    uploaded_io = preset_params[:file_upload]
-    origin_filename = uploaded_io.original_filename
-    new_filename = Time.new.strftime("%Y%m%d%H%M%S") + origin_filename[origin_filename.index('.'),4]
-    file_name = Rails.root.join("public/uploads/presets", new_filename)
-    File.open(file_name, 'wb') do |file|
-      file.write(uploaded_io.read)
-      @preset.path = "public/uploads/presets/" + new_filename
-    end
+    # uploaded_io = preset_params[:file_upload]
+    # origin_filename = uploaded_io.original_filename
+    # new_filename = Time.new.strftime("%Y%m%d%H%M%S") + origin_filename[origin_filename.index('.'),4]
+    # file_name = Rails.root.join("public/uploads/presets", new_filename)
+    # File.open(file_name, 'wb') do |file|
+    #   file.write(uploaded_io.read)
+    #   @preset.path = "public/uploads/presets/" + new_filename
+    # end
     
     @preset.save
     respond_with(@preset)
@@ -53,6 +53,6 @@ class PresetsController < ApplicationController
     end
 
     def preset_params
-      params[:preset].permit(:title, :path, :category_id, :file_upload)
+      params[:preset].permit(:title, :path, :category_id, :file_upload, :status)
     end
 end
