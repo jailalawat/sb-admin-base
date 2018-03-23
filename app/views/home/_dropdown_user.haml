@@ -8,6 +8,6 @@
     Settings
 %li.divider
 %li
-  %a{:href => destroy_user_session_path, method: :delete}
+  = link_to destroy_user_session_path, :method => :delete do
     %i.fa.fa-sign-out.fa-fw
     Logout

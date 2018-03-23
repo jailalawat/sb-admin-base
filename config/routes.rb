@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users, only: [:index, :edit, :update, :new, :create] do 
+    member do 
+      delete "delete" => "users#destroy"
+      get 'show' => "users#show"
+    end
+  end
   devise_for :users
   resources :preset_categories
 
