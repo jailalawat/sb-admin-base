@@ -14,5 +14,6 @@
 class Preset < ActiveRecord::Base
   attr_accessor :file_upload
   include ImageUploader[:path]   
+  STATUS = [["on", "true"], ["off", "false"]]
   belongs_to :category, class_name: "PresetCategory"
 end

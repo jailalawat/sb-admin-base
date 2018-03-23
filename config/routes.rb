@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :edit, :update, :new, :create] do 
+  resources :users, only: [:index, :edit, :new, :create] do 
     member do 
       delete "delete" => "users#destroy"
       get 'show' => "users#show"
+      patch 'show' => "users#update"
+      put 'show' => "users#update"
     end
   end
   devise_for :users

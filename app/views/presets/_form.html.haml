@@ -18,8 +18,7 @@
   .form-group
     = f.label :status, class: 'control-label col-lg-2'
     .col-lg-10
-      =f.select :status, options_for_select(["true", "false"], @preset.status) ,{include_blank: true}, class: "form-control block"
-      =# f.text_field :status, class: 'form-control', required: true
+      =f.select :status, options_for_select(Preset::STATUS,  Preset::STATUS[@preset.status ? 0 : 1]) ,{include_blank: true, required: true}, class: "form-control block"
     = f.error_span(:status)
   .form-group
     .col-lg-offset-2.col-lg-10

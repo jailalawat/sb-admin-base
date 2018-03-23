@@ -30,14 +30,10 @@
       = f.password_field :password_confirmation, class: 'form-control', required: true
     = f.error_span(:password_confirmation)
   .form-group
-    = f.label :activeKey, class: 'control-label col-lg-2'
-    .col-lg-10
-      = f.text_field :activeKey, class: 'form-control', required: true
-    = f.error_span(:activeKey)
-  .form-group
     = f.label :status, class: 'control-label col-lg-2'
     .col-lg-10
-      = f.text_field :status, class: 'form-control', required: true
+      =f.select :status, options_for_select(User::STATUS, User::STATUS[@user.status][1]) ,{include_blank: true}, class: "form-control block"
+      =# f.text_field :status, class: 'form-control', required: true
     = f.error_span(:status)
   .form-group
     .col-lg-offset-2.col-lg-10

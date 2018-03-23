@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  STATUS = [["on", 1], ["off", 0]]
     #Encrypt password
     # def encrypt_password(password, salt) 
     #     Digest::SHA2.hexdigest(password + salt)

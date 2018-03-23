@@ -18,7 +18,8 @@
         %td= link_to preset.title, preset_path(preset)
         %td= image_tag preset.path[:sm_square].url, size: "50x50" if preset.path_data != ""
         %td= preset.category.title if preset.category
-        %td= preset.status
+        //%td=# preset.status
+        %td= check_box_tag 'status', 'accepted', preset.status, disabled: true
         %td=l preset.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_preset_path(preset), :class => 'btn btn-default btn-xs'

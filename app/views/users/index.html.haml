@@ -9,7 +9,6 @@
       %th= model_class.human_attribute_name(:department)
       %th= model_class.human_attribute_name(:position)
       %th= model_class.human_attribute_name(:email)
-      %th= model_class.human_attribute_name(:activeKey)
       %th= model_class.human_attribute_name(:status)
       %th= model_class.human_attribute_name(:current_sign_in_at)
       %th= model_class.human_attribute_name(:last_sign_in_at)
@@ -25,8 +24,8 @@
         %td= user.department
         %td= user.position
         %td= user.email
-        %td= user.activeKey
-        %td= user.status
+        //%td= user.status
+        %td= check_box_tag 'status', 'accepted', (user.status==1 ? true : false), disabled: true
         %td= user.current_sign_in_at
         %td= user.last_sign_in_at
         %td= user.current_sign_in_ip
