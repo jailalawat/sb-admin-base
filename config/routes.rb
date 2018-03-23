@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   # post 'client-uploads/process' => 'client_uploads#process'
   post 'client-uploads/asset' => 'client_uploads#asset_post'
   get  'client-uploads/asset' => 'client_uploads#asset'
+  resources :client_uploads, only: :show
 
   post 'client-uploads/json' => 'client_uploads#json_post'
   get  'client-uploads/json/:cart_id' => 'client_uploads#json'

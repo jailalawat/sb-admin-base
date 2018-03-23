@@ -30,6 +30,11 @@ class ClientUploadsController < ApplicationController
 
   end
 
+  def show
+    @photo = Photo.find params[:id]
+    render :json => {success: true, data: @photo.image_data}
+  end
+
 
   def json_post
     @json = Transcript.new(json_params)
