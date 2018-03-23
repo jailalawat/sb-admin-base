@@ -1,6 +1,6 @@
 module ShrineBackgrounding
     class PromoteJob
-      # include Sidekiq::Worker
+      include Sidekiq::Worker
   
       def perform(data)
         Shrine::Attacher.promote(data)
